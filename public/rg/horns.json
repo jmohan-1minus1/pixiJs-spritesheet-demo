@@ -1,0 +1,47 @@
+{"frames": {
+
+"horns1.png":
+{
+	"frame": {"x":1,"y":1,"w":125,"h":213},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":91,"y":42,"w":125,"h":213},
+	"sourceSize": {"w":300,"h":300}
+},
+"horns2.png":
+{
+	"frame": {"x":1,"y":216,"w":125,"h":213},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":91,"y":42,"w":125,"h":213},
+	"sourceSize": {"w":300,"h":300}
+},
+"horns3.png":
+{
+	"frame": {"x":1,"y":431,"w":125,"h":213},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":91,"y":42,"w":125,"h":213},
+	"sourceSize": {"w":300,"h":300}
+},
+"horns4.png":
+{
+	"frame": {"x":1,"y":646,"w":125,"h":213},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":91,"y":42,"w":125,"h":213},
+	"sourceSize": {"w":300,"h":300}
+}},
+"animations": {
+	"horns": ["horns1.png","horns2.png","horns3.png","horns4.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "horns.png",
+	"format": "RGBA8888",
+	"size": {"w":127,"h":860},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:188cc2fa2337a8a878c54a1291578f16:c5688db9e4cc73a40432e3dcc3c7a84e:f606aa88793f15dc4f04860041ac524d$"
+}
+}

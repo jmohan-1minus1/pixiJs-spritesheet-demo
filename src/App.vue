@@ -1,26 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  Tutorial
+  <PixiScene/>
+  Spritesheet + hover
+  <PixiSceneOptimised/>
+  Horns
+  <PixiHorns/>
+  Stacked animations
+  <PixiStackedAnimations/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PixiScene from './components/PixiScene.vue'
+import PixiSceneOptimised from './components/PixiSceneOptimised.vue'
+import PixiHorns from './components/PixiHorns.vue'
+import PixiStackedAnimations from './components/PixiStackedAnimations.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    PixiScene,
+    PixiSceneOptimised,
+    PixiHorns,
+    PixiStackedAnimations
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+
