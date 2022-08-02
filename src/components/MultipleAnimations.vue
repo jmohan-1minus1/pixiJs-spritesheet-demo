@@ -1,6 +1,6 @@
 <script>
 import * as PIXI from 'pixi.js'
-const spritesheetData = require(`../../public/capguy-spritesheets/spritesheet.json`)
+const spritesheetData = require(`../../public/capguy_reversed/spritesheet.json`)
 
 export default {
 
@@ -9,11 +9,11 @@ export default {
         let app = new PIXI.Application({ width: 800, height: 450 });
         this.$refs.canvas.appendChild(app.view);
 
-        let background, animatedCapguy, ticker;
+        let background, animatedCapguy//, ticker;
 
         // Create the SpriteSheet from data and image
         const spritesheet = new PIXI.Spritesheet(
-            PIXI.BaseTexture.from(`../../capguy-spritesheets/${spritesheetData.meta.image}`),
+            PIXI.BaseTexture.from(`../../capguy_reversed/${spritesheetData.meta.image}`),
             spritesheetData
         );
 
@@ -29,42 +29,39 @@ export default {
             app.stage.scale.y = app.view.height / background.height;
             
             animatedCapguy = new PIXI.AnimatedSprite(spritesheet.animations.walk);
-            console.log("anim", animatedCapguy)
-            animatedCapguy.interactive = true
             // set speed, start playback and add it to the stage
             animatedCapguy.animationSpeed = 0.167;
             animatedCapguy.position.set(0, background.height - 350); // almost bottom-left corner of the canvas
             app.stage.addChild(animatedCapguy);
-
             animatedCapguy.play()
 
-            //app.ticker.add(delta => gameLoop(delta));
-
-            ticker = new PIXI.Ticker
-            ticker.add(delta => gameLoop(delta));
-            ticker.start()
-
+            // loop through first 8 frames of animation
             animatedCapguy.onFrameChange = function (x) {
-                if (x === 3) animatedCapguy.gotoAndPlay(0)
+                if (x === 7) animatedCapguy.gotoAndPlay(0)
             };
 
+            // interactivity
+            animatedCapguy.interactive = true
             animatedCapguy
             .on('pointerover', onButtonDown)
             .on('pointerout', onButtonUp);
+
+            // loop
+            app.ticker.add(delta => gameLoop(delta));
         });
 
         function onButtonDown() {
+            // set range of animation to last 8 frames
             animatedCapguy.onFrameChange = function (x) {
-                if (x === 7) animatedCapguy.gotoAndPlay(4)
+                if (x === 15) animatedCapguy.gotoAndPlay(8)
             };
-            ticker.stop()
         }
 
         function onButtonUp() {
+            // reset back to first 8 frames
             animatedCapguy.onFrameChange = function (x) {
-                if (x === 3) animatedCapguy.gotoAndPlay(0)
+                if (x === 7) animatedCapguy.gotoAndPlay(0)
             };
-            ticker.start()
         }
 
         function gameLoop(delta) {

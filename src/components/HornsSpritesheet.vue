@@ -1,3 +1,5 @@
+
+
 <script>
 import * as PIXI from 'pixi.js'
 const hornsData = require(`../../public/rg/horns.json`)
@@ -11,16 +13,56 @@ export default {
                     id: 'horns1',
                     data: hornsData,
                     loc: {
-                        x: 100,
-                        y: 100
+                        x: 200,
+                        y: 117
                     }
                 },
                 {
                     id: 'horns2',
                     data: hornsData,
                     loc: {
-                        x: 300,
-                        y: 300
+                        x: 400,
+                        y: 117
+                    }
+                },
+                {
+                    id: 'horns2',
+                    data: hornsData,
+                    loc: {
+                        x: 600,
+                        y: 117
+                    }
+                },
+                {
+                    id: 'horns2',
+                    data: hornsData,
+                    loc: {
+                        x: 800,
+                        y: 117
+                    }
+                },
+                {
+                    id: 'horns2',
+                    data: hornsData,
+                    loc: {
+                        x: 1000,
+                        y: 117
+                    }
+                },
+                {
+                    id: 'horns2',
+                    data: hornsData,
+                    loc: {
+                        x: 1200,
+                        y: 117
+                    }
+                },
+                {
+                    id: 'horns2',
+                    data: hornsData,
+                    loc: {
+                        x: 1400,
+                        y: 117
                     }
                 }
             ]
@@ -28,7 +70,7 @@ export default {
     },
     mounted() {
 
-        let app = new PIXI.Application({ resizeTo: window });
+        let app = new PIXI.Application({ width: 800, height: 450 });
         this.$refs.canvas.appendChild(app.view);
 
         let background//, horns
